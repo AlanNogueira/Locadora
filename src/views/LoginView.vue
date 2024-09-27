@@ -22,7 +22,7 @@ async function login() {
     console.log(user);
     const {data} = await auth.login(user);
   } catch (error) {
-    console.log(error?.response?.data);
+    console.log(error);
   }
 }
 </script>

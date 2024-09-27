@@ -1,4 +1,4 @@
-import axios from '@/services/axios/axiosConfig.js'
+import axios from '@/services/axios/httpRequestHandler.js'
 
 const BASE_URL = '/auth';
 
