@@ -5,7 +5,12 @@ const BASE_URL = '/auth';
 export default {
 
     login(user){
-        return axios.postRequestWithBody(`${BASE_URL}/login`, user);
+        return axios.postRequestWithBody(`${BASE_URL}/CreateToken`, user);
+    },
+
+    checkToken(token){
+        console.log(token)
+        return axios.postRequest(`${BASE_URL}/ValidateToken`)
     }
 
 

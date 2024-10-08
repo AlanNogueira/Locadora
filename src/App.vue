@@ -1,22 +1,22 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
 
+import { useAuth } from '@/stores/auth';
+import NavBar from './components/NavBar.vue';
+import HomeView from './views/HomeView.vue';
+
+const auth = useAuth();
+
+</script>
+  
 <template>
-  <ul>
-    <li>
-      <RouterLink :to="{name:'home'}">Home</RouterLink>
-    </li>
-    <li>
-      <RouterLink :to="{name:'login'}">Login</RouterLink>
-    </li>
-    <li>
-      <RouterLink :to="{name:'dashboard'}">Dashboard</RouterLink>
-    </li>
-  </ul>
-  <RouterView />
+  <v-app>
+    <NavBar></NavBar>
+    <v-main>
+      <HomeView></HomeView>
+    </v-main>
+  </v-app>
 </template>
 
 <style scoped>
-
+  
 </style>
