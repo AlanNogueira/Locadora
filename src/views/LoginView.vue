@@ -3,12 +3,12 @@
     <form @submit.prevent="login" class="formLogin">
       <h1>Login</h1>
       <label for="email">E-mail</label>
-      <input type="email" placeholder="Seu email" v-model="user.email">
+ <input type="email" placeholder="Seu email" v-model="user.email">
       <label for="password">Senha</label>
-      <input type="password" placeholder="Sua senha" v-model="user.password">
+ <input type="password" placeholder="Sua senha" v-model="user.password">
       <button type="submit">Login</button>
   </form>
-  </div>
+</div>
 </template>
 
 <script setup>
@@ -40,11 +40,11 @@ async function login() {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
+ font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #023047
-}
+ color: #023047
+  }
 
 .page {
     display: flex;
@@ -86,16 +86,28 @@ body {
 }
 
 .formLogin input {
-    padding: 15px;
-    font-size: 14px;
+ padding: 15px;
+ font-size: 14px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
     margin-top: 5px;
     border-radius: 4px;
     transition: all linear 160ms;
-    outline: none;
+    color: hsla(160, 100%, 37%, 1);
+ outline: none;
 }
 
+.input-container {
+ position: relative;
+ display: flex;
+ align-items: center;
+ margin-bottom: 20px;
+}
+
+.input-container .icon {
+ position: absolute;
+    outline: none;
+}
 
 .formLogin input:focus {
     border: 1px solid #f72585;
@@ -120,7 +132,7 @@ body {
 }
 
 .btn {
-    background-color: #f72585;
+    background-color: hsla(160, 100%, 37%, 1);
     color: #fff;
     font-size: 14px;
     font-weight: 600;
@@ -131,8 +143,22 @@ body {
 
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    background-color: #ff0676;
+.formLogin button {
+  margin-top: 15px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  z-index: 10;
+  border-radius: 5px;
+  background-color: hsla(160, 100%, 37%, 0.8);
+  border: none;
+  cursor: pointer;
+  transition: all linear 160ms;
 }
+
+.formLogin button:hover {
+  background-color: hsla(160, 100%, 27%, 0.8); /* Darker shade of green */
+}
+
 </style>
