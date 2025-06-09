@@ -8,9 +8,9 @@ export default {
         return axios.postRequestWithBody(`${BASE_URL}/CreateToken`, user);
     },
 
-    checkToken(token){
+    async checkToken(token){
         console.log(token)
-        return axios.postRequest(`${BASE_URL}/ValidateToken`)
+        return await axios.postRequest(`${BASE_URL}/ValidateToken`)
     }
 
 

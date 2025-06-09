@@ -38,7 +38,7 @@ export const useAuth = defineStore('auth', () => {
     try{
         const { data } = await auth.checkToken();
         console.log(data)
-        return data;
+        return data === true;
     }catch(error){
         console.log(error.response.data)
     }

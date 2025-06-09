@@ -25,20 +25,30 @@ const router = createRouter({
       meta:{
         auth:true
       }
+    },
+    {
+      path: '/recipe/:id',
+      name: 'recipe',
+      component: () => import('../views/RecipeView.vue'),
+      meta:{
+        auth:true
+      }
     }
   ]
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   ///Aqui vai inserir em todas as rotas o que estiver aqui dentro
   if(to.meta?.auth){
     const auth = useAuth();
     if(auth.token && auth.user){
-      const autorized = auth.checkToken();
+      const autorized = await auth.checkToken();
+      console.log('authorized: ' + autorized)
       if(autorized){
         next();
       }
       else{
+        console.log('entrou')
         next({name:'login'});
       }
     }

@@ -13,7 +13,6 @@
             </li>
         </div>
     </v-app-bar>
-    <RouterView />
 </template>
 
 <script setup>
